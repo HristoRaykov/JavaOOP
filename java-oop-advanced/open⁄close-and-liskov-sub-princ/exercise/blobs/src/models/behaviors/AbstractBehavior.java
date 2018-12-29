@@ -1,17 +1,17 @@
-package models.behavors;
+package models.behaviors;
 
 import interfaces.Behavior;
-import models.Blob;
 
 public abstract class AbstractBehavior implements Behavior {
 
-    protected boolean isTriggered;
-    protected boolean toDelayRecurrentEffect;
+    private boolean isTriggered;
+    private boolean toDelayRecurrentEffect;
 
-    public AbstractBehavior() {
+    protected AbstractBehavior() {
         this.toDelayRecurrentEffect = true;
     }
-
+    
+	@Override
     public boolean isTriggered() {
         return this.isTriggered;
     }
@@ -27,8 +27,7 @@ public abstract class AbstractBehavior implements Behavior {
     public void setToDelayRecurrentEffect(boolean toDelayRecurrentEffect){
         this.toDelayRecurrentEffect = toDelayRecurrentEffect;
     }
-
-    public abstract void trigger(Blob source);
-
-    public abstract void applyRecurrentEffect(Blob source);
+	
+    
+    
 }
